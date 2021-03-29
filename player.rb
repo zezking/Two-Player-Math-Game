@@ -1,6 +1,6 @@
 class Player 
     attr_accessor :life, :name
-    attr_reader :life, :turn, :name
+    attr_reader :life, :turn, :name, :current_life
     attr_writer :name, :turn
     def initialize(name, life)
         @name=name
@@ -18,6 +18,6 @@ class Player
     end
 
     def status
-        puts "#{@current_life}/#{@life}"
+        print "#{@name}:  #{@current_life}/#{@life}"
     end 
 end
