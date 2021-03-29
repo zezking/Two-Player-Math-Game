@@ -1,20 +1,23 @@
 class Player 
-    attr_accessor :life
-    attr_reader :life
-
-    def initialize(life)
+    attr_accessor :life, :name
+    attr_reader :life, :turn, :name
+    attr_writer :name, :turn
+    def initialize(name, life)
+        @name=name
+        @turn=true
+        @current_life=life
         @life=life
     end
 
-    def panelty
-        @life-=1
+    def penalty
+        @current_life-=1
     end
+    
+    def switch_turn
+        @turn=false
+    end
+
+    def status
+        puts "#{@current_life}/#{@life}"
+    end 
 end
-
-p1=Player.new(3)
-
-p p1.life
-
-p1.panelty
-
-p p1.life
